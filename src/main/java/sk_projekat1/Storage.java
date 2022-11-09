@@ -105,39 +105,50 @@ public interface Storage {
      * Lists the metadata of all files in a folder.
      *
      * @param folderPath Folder path (relative path from storage)
+     * @param fileExtension File extension
+     * @param startDate Start date
+     * @param endDate   End date
      * @param typeSort   Sort type for the file list
      * @param typeFilter Filter type for the file list
      */
-    List<String> searchFilesInFolder(String folderPath, TypeSort typeSort, TypeFilter typeFilter);
+    List<String> searchFilesInFolder(String folderPath, String fileExtension, String startDate, String endDate, TypeSort typeSort, TypeFilter typeFilter);
 
     /**
      * Lists the metadata of all files in a folder, including subfolders.
      *
      * @param folderPath Folder path (relative path from storage)
+     * @param fileExtension File extension
+     * @param startDate     Start date
+     * @param endDate       End date
      * @param typeSort   Sort type for the file list
      * @param typeFilter Filter type for the file list
      */
-    List<String> searchFilesInFolders(String folderPath, TypeSort typeSort, TypeFilter typeFilter);
+    List<String> searchFilesInFolders(String folderPath, String fileExtension, String startDate, String endDate, TypeSort typeSort, TypeFilter typeFilter);
 
     /**
      * Lists the metadata of all files with a specific extension in a folder.
      *
      * @param fileExtension File extension type
      * @param folderPath    Folder path (relative path from storage)
+     * @param startDate     Start date
+     * @param endDate       End date
      * @param typeSort      Sort type for the file list
      * @param typeFilter    Filter type for the file list
      */
-    List<String> searchFilesWithExtensionInFolder(String fileExtension, String folderPath, TypeSort typeSort, TypeFilter typeFilter);
+    List<String> searchFilesWithExtensionInFolder(String fileExtension, String folderPath, String startDate, String endDate, TypeSort typeSort, TypeFilter typeFilter);
 
     /**
      * Lists the metadata of all files with a specific substring in a folder.
      *
      * @param fileSubstring File substring
      * @param folderPath    Folder path (relative path from storage)
+     * @param fileExtension File extension
+     * @param startDate     Start date
+     * @param endDate       End date
      * @param typeSort      Sort type for the file list
      * @param typeFilter    Filter type for the file list
      */
-    List<String> searchFilesWithSubstringInFolder(String fileSubstring, String folderPath, TypeSort typeSort, TypeFilter typeFilter);
+    List<String> searchFilesWithSubstringInFolder(String fileSubstring, String folderPath, String fileExtension, String startDate, String endDate, TypeSort typeSort, TypeFilter typeFilter);
 
     /**
      * Checks if file(s) with the specified name(s) is(/are) in a folder.
@@ -161,8 +172,9 @@ public interface Storage {
      * @param beginDate  Start date for the search
      * @param endDate    End date for the search
      * @param folderPath Folder path (relative path from storage)
+     * @param fileExtension File extension
      * @param typeSort   Sort type for the file list
      * @param typeFilter Filter type for the file list
      */
-    List<String> searchModifiedFilesInFolder(Date beginDate, Date endDate, String folderPath, TypeSort typeSort, TypeFilter typeFilter);
+    List<String> searchModifiedFilesInFolder(Date beginDate, Date endDate, String folderPath, String fileExtension, TypeSort typeSort, TypeFilter typeFilter);
 }
