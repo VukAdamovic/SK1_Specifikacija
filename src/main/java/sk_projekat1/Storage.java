@@ -3,7 +3,6 @@ package sk_projekat1;
 import sk_projekat1.enums.TypeFilter;
 import sk_projekat1.enums.TypeSort;
 
-import java.util.Date;
 import java.util.List;
 
 public interface Storage {
@@ -135,7 +134,7 @@ public interface Storage {
      * @param typeSort      Sort type for the file list
      * @param typeFilter    Filter type for the file list
      */
-    List<String> searchFilesWithExtensionInFolder(String fileExtension, String folderPath, String startDate, String endDate, TypeSort typeSort, TypeFilter typeFilter);
+    List<String> searchFilesWithExtensionInFolder(String folderPath, String fileExtension, String startDate, String endDate, TypeSort typeSort, TypeFilter typeFilter);
 
     /**
      * Lists the metadata of all files with a specific substring in a folder.
@@ -169,12 +168,12 @@ public interface Storage {
     /**
      * Lists the metadata of all files created or modified within a specific date range in a folder.
      *
-     * @param beginDate  Start date for the search
+     * @param startDate  Start date for the search
      * @param endDate    End date for the search
      * @param folderPath Folder path (relative path from storage)
      * @param fileExtension File extension
      * @param typeSort   Sort type for the file list
      * @param typeFilter Filter type for the file list
      */
-    List<String> searchModifiedFilesInFolder(Date beginDate, Date endDate, String folderPath, String fileExtension, TypeSort typeSort, TypeFilter typeFilter);
+    List<String> searchModifiedFilesInFolder(String folderPath, String fileExtension, String startDate, String endDate, TypeSort typeSort, TypeFilter typeFilter);
 }
