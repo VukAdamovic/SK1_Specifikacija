@@ -7,8 +7,7 @@ public class StorageManager {
         storage = st;
     }
 
-    public static Storage getStorage(String path){
-        //storage.setPath(path);
+    public static Storage getStorage(){
         return storage;
     }
 
